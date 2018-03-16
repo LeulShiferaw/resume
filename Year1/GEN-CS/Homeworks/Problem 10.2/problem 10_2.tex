@@ -1,0 +1,34 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb}
+
+\title{Problem 10.2}
+\author{Leul Shiferaw}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle	
+	\newpage
+	\pagenumbering{arabic}
+	
+	\noindent (x $<$ 0 $\wedge$ x $\geq$ -1) $\Rightarrow (1+x)^n \geq nx$
+	\\\\\underline{Proof:}
+	\\Left hand side will be positive while the right hand side will be negative.
+	\\\\For $x \geq 0$
+	\\$P(n) \Rightarrow (1+x)^n \geq nx$
+	\\\\\underline{Proof:} 
+	\\\\\underline{B. Case:} 
+	\\\\$1 \geq 0 \equiv True$
+	\\\\\underline{Ind. Step:}
+	\\\\$(1+x)^{n+1} \geq (n+1)x$
+	\\$(1+x)^n(1+x) \geq nx + x$
+	\\$(1+x)^n + x(1+x)^n \geq nx + x$
+	\\\\By P(n), $(1+x)^n \geq nx$
+	\\\\$x \geq 0$
+	\\$(1+x)^n \geq 1$
+	\\$x(1+x)^n \geq x$
+	\\\\$\therefore P(n+1) \equiv True$
+	\begin{flushright}
+		$\Box$
+	\end{flushright}
+\end{document}

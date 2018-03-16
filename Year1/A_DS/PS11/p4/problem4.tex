@@ -1,0 +1,32 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+
+\title{Problem 4}
+\author{Leul Shiferaw}
+\begin{document}
+	\maketitle
+	\newpage
+	1. Merge Sort
+	\begin{align*}	
+		T(n)=2T(n/2)+\Theta(n)\\
+		\Theta(n^{log_{2}2}) = \Theta(n)\\
+		\Theta(n)=\Theta(n)\\
+		By Master Theorem: \Theta(n*lg(n))	
+	\end{align*}
+	2. Binary Search
+	\begin{align*}
+		T(n)=T(n/2)+\Theta(1)\\
+		\Theta(n^{log_{2}1})=\Theta(1)\\
+		\Theta(1)=\Theta(1)\\
+		ByMasterTheorem: \Theta(lg(n))		
+	\end{align*}
+	3. Karatsuba Multiplication of polynomials
+	\begin{align*}
+		T(n)=3T(n/2)+\Theta(n)\\
+		\Theta(n^{log_{2}3})>\Theta(n)\\
+		ByMasterTheorem: \Theta(n^{log_{2}3})
+	\end{align*}
+\end{document}

@@ -1,0 +1,35 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  main.cpp
+ *
+ *    Description:  Brute Fore for Maximum Subarray
+ *
+ *        Version:  1.0
+ *        Created:  23.12.2016 02:10:40
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Leul Shiferaw (ls), l.shiferaw@jacobs-university.de
+ *   Organization:  
+ *
+ * =====================================================================================
+ */
+#include <stdio.h>
+
+int main()
+{
+	int n = 16, sum = 0, g_sum = 0;
+	int A[n] = {13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7};
+	for(int i = 0; i<n; ++i)
+	{
+		sum = 0; 
+		for(int j = i; j<n; ++j)
+			if(sum+A[j] > sum) sum+=A[j];
+			else break;
+		sum > g_sum ? g_sum = sum : g_sum*=1;
+	}
+
+	printf("Sum: %d\n", g_sum);
+	return 0;
+}

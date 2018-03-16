@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1479857178 source:/home/leulshiferaw/Desktop/OOP 1/Debug/main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<vector>
+
+1478794641 /home/leulshiferaw/Desktop/OOP 1/Debug/Shapes.h
+	<string>
+	<math.h>
+
+1478794583 source:/home/leulshiferaw/Desktop/OOP 1/Debug/Shapes.cpp
+	<iostream>
+	"Shapes.h"
+

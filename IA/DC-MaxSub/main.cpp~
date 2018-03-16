@@ -1,0 +1,69 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  main.cpp
+ *
+ *    Description:  Divide and Conquer for Max Sub array
+ *
+ *        Version:  1.0
+ *        Created:  23.12.2016 02:28:36
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Leul Shiferaw (ls), l.shiferaw@jacobs-university.de
+ *   Organization:  
+ *
+ * =====================================================================================
+ */
+#include <stdio.h>
+
+int max_cross(int *A, const int &l, const int &m, const int &h)
+{
+	int sum = 0, g_sum =0, l_sum = 0, r_sum = 0;
+
+	for(int i = m-1; i>=l; --i)
+	{
+		sum += A[i];
+		if(sum > g_sum)
+			g_sum = sum;
+	}
+	l_sum = g_sum;
+	sum = g_sum = 0;
+	for(int i = m+1; i<h; ++i)
+	{
+		sum += A[i];
+		if(sum > g_sum)
+			g_sum = sum;
+	}
+	r_sum = g_sum;
+
+	return l_sum + r_sum + A[m];
+}
+
+int max_sum_arr(int *A, const int &l, const int &h)
+{
+	if(h == l+1)
+		return A[l];
+	int m = (l+h)/2;
+
+	int cross = max_cross(A, l, m, h);
+	int left = max_sum_arr(A, l, m);
+	int right = max_sum_arr(A, m, h);
+
+	if(left > cross)
+	{
+		if(left > right)
+			return left;
+		else return right;
+	}
+	else if(cross > right)
+		return cross;
+	else return right;
+}
+int main()
+{
+	int n = 16, A[n] = {13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7};
+	printf("Greatest Sum: %d\n", max_sum_arr(A, 0, n));
+	return 0;
+}
+

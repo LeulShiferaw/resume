@@ -1,0 +1,114 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  main.cpp
+ *
+ *    Description:  Inversions
+ *
+ *        Version:  1.0
+ *        Created:  21.12.2016 20:58:28
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Leul Shiferaw (ls), l.shiferaw@jacobs-university.de
+ *   Organization:  
+ *
+ * =====================================================================================
+ */
+
+#include <stdio.h>
+
+#define cii const int
+#define F(s, e) for(int i = s; i < e; ++i)
+
+//Also calculates inversion
+int merge(int *A, const int &p, const int &q, const int &r)
+{
+	int l1 = q-p, l2 = r-q;
+	int *L = new int[l1];
+	int *R = new int[l2];
+
+	F(0, l1){
+		L[i] = A[p+i];
+	}
+	F(0, l2){
+		R[i] = A[q+i];
+	}
+
+	int j = p;
+	int l = 0;//Index for Left side
+	int w = 0;//Index for right side
+	int total = 0; 
+
+	while(true){
+		if(l >= l1){
+			F(w, l2){
+				A[j] = R[i];
+				++j;
+			}
+			break;
+		}else if(w >= l2){
+			F(l, l1){
+				A[j] = L[i];
+				i != l ? total*=2 : total*=1;
+				++j;
+			}
+			break;
+		}
+
+		if(L[l] < R[w]){
+			A[j] = L[l];
+			l >= l1 ? total *= 1 : total*=2;
+			++l;
+		}else{
+			A[j] = R[w];
+			if(R[w] < L[l]) ++total;
+			++w;
+		}
+		++j;
+	}
+
+	delete[]L;
+	delete[]R;
+	L = R = NULL;
+
+	return total;
+}
+
+int mergesort(int *A, const int &s, const int &e)
+{
+	if(e == s+1)
+		return 0;
+	int m = (s+e)/2;
+	int i1 = mergesort(A, s, m);
+	int i2 = mergesort(A, m, e);
+	int i3 = merge(A, s, m, e);
+	return i1 + i2 + i3;
+}
+
+void display(int *A, const int &n)
+{
+	F(0, n){
+		printf("%d ", A[i]);
+	}
+	printf("\n");
+
+}
+
+int main()
+{
+	int n = 3;
+	int *A = new int[n];
+	
+	A[0] = 3;
+	A[1] = -1;
+	A[2] = 1;
+
+	display(A, n);
+	int res = mergesort(A, 0, n);
+	display(A, n);
+	printf("\nInversions: %d\n", res);
+	delete[]A;
+	A = NULL;
+	return 0;
+}

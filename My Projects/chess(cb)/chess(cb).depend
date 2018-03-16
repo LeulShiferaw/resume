@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1448181002 source:c:\users\leul abiy\desktop\chess(cb)\main.cpp
+	"main_game.h"
+
+1448180364 c:\users\leul abiy\desktop\chess(cb)\main_game.h
+	<iostream>
+	<string>
+	<vector>
+
+1448178850 c:\users\leul abiy\desktop\chess(cb)\constants.h
+	<string>
+
+1448181123 source:c:\users\leul abiy\desktop\chess(cb)\main_game.cpp
+	"main_game.h"
+

@@ -1,0 +1,21 @@
+﻿  main.cpp
+main.cpp(23): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+main.cpp(25): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+main.cpp(26): warning C4018: '<': signed/unsigned mismatch
+main.cpp(95): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+main.cpp(96): warning C4018: '<': signed/unsigned mismatch
+main.cpp(106): warning C4018: '<': signed/unsigned mismatch
+main.cpp(135): warning C4018: '<': signed/unsigned mismatch
+main.cpp(157): warning C4018: '<': signed/unsigned mismatch
+main.cpp(269): warning C4018: '<': signed/unsigned mismatch
+main.cpp(280): warning C4018: '<': signed/unsigned mismatch
+main.cpp(348): warning C4018: '<': signed/unsigned mismatch
+main.cpp(364): warning C4018: '<': signed/unsigned mismatch
+main.cpp(379): warning C4018: '<': signed/unsigned mismatch
+main.cpp(445): warning C4018: '<': signed/unsigned mismatch
+main.cpp(460): warning C4018: '<': signed/unsigned mismatch
+main.cpp(518): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating code
+  All 397 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Genetic Algorithm.vcxproj -> C:\Users\Leul Shiferaw\Desktop\My Projects\Genetic Algorithm\Release\Genetic Algorithm.exe

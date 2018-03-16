@@ -1,0 +1,15 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+\noindent
+INSERTION-SORT(A)\\
+\indent	for j = 2 to A.length\\
+\indent	\indent	key = A[j]\\
+\indent	\indent	i = j - 1\\
+\indent	\indent	while i $>$ 0 and A[i] $<$ key\\
+\indent	\indent	\indent	A[i+1] = A[i]\\
+\indent	\indent	\indent	i = i-1\\
+\indent	\indent	A[i+1] = key\\
+\end{document}

@@ -1,0 +1,215 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  main.cpp
+ *
+ *    Description:  Stassen's Algorithm(Powers of 2)
+ *
+ *        Version:  1.0
+ *        Created:  25.12.2016 04:13:00
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Leul Shiferaw (ls), l.shiferaw@jacobs-university.de
+ *   Organization:  
+ *
+ * =====================================================================================
+ */
+#include <stdio.h>
+
+//Add A, B and put it in C
+//But based on ax, ay...
+void add(int **A, int **B, int **C, const int &ax, const int &ay, const int &bx, const int &by, const int &cx, const int &cy, const int &s)
+{
+	for(int i = 0; i<s; ++i)
+		for(int j = 0; j<s; ++j)
+			C[cx+i][cy+j] = A[ax+i][ay+i]+B[bx+i][by+j];
+}
+
+//Subtract A, B and put it in C
+//But based on ax, ay...
+void subtr(int **A, int **B, int **C, const int &ax, const int &ay, const int &bx, const int &by, const int &cx, const int &cy, const int &s)
+{
+	for(int i = 0; i<s; ++i)
+		for(int j = 0; j<s; ++j)
+			C[cx+i][cy+j] = A[ax+i][ay+i]-B[bx+i][by+j];
+}
+
+//Using Strassen's Algo multiply A and B and put it in C
+//But multiply only the portion described by ax, ay...
+//s-size
+void multiply(int **A, int **B, int **C, const int &ax, const int &ay, const int &bx, const int &by, const int &cx, const int &cy, const int &s)
+{
+	//Base Case
+	if(s==1)
+	{
+		C[cx][cy] = A[ax][ay]*B[bx][by];
+		return;
+	}
+	
+	const int n = s/2;//Size of new sum and product matrices
+	
+	//Create Sum and Product Matrices
+	int **S[10], **P[7];
+
+	for(int i = 0; i<10; ++i)
+	{
+		if(i<7) P[i] = new int*[n];
+		S[i] = new int*[n];
+
+		for(int j = 0; j<n; ++j)
+		{
+			S[i][j] = new int[n];
+			if(i<7)
+				P[i][j] = new int[n];
+		}
+	}
+
+	//Define Location constants
+	const int a11x = ax;
+	const int a11y = ay;
+	const int a12x = ax;
+	const int a12y = ay+n;
+	const int a21x = ax+n;
+	const int a21y = ay;	
+	const int a22x = ax+n;
+	const int a22y = ay+n;
+	const int b11x = bx;
+	const int b11y = by;
+	const int b12x = bx;
+	const int b12y = by+n;
+	const int b21x = bx+n;
+	const int b21y = by;
+	const int b22x = bx+n;
+	const int b22y = by+n;
+	const int c11x = cx;
+	const int c11y = cy;
+	const int c12x = cx;
+	const int c12y = cy+n;
+	const int c21x = cx+n;
+	const int c21y = cy;
+	const int c22x = cx+n;
+	const int c22y = cy+n;
+	
+	//Calc Sums
+	subtr(B, B, S[0], b12x, b12y, b22x, b22y, 0, 0, n);//B12-B22
+	add(A, A, S[1], a11x, a11y, a12x, a12y, 0, 0, n);//A11+A12
+	add(A, A, S[2], a21x, a21y, a22x, a22y, 0, 0, n);//A21+A22
+	subtr(B, B, S[3], b21x, b21y, b11x, b11y, 0, 0, n);//B21-B11
+	add(A, A, S[4], a11x, a11y, a22x, a22y, 0, 0, n);//A11+A22
+	add(B, B, S[5], b11x, b11y, b22x, b22y, 0, 0, n);//B11+B22
+	subtr(A, A, S[6], a12x, a12y, a22x, a22y, 0, 0, n);//A12-A22
+	add(B, B, S[7], b21x, b21y, b22x, b22y, 0, 0, n);//B21+B22
+	subtr(A, A, S[8], a11x, a11y, a21x, a21y, 0, 0, n);//A11-A21
+	add(B, B, S[9], b11x, b11y, b12x, b12y, 0, 0, n);//B11+B12
+
+	//Calc Products
+	multiply(A, S[0], P[0], a11x, a11y, 0, 0, 0, 0, n);//A11*S1
+	multiply(S[1], B, P[1], 0, 0, b22x, b22y, 0, 0, n);//S2*B22
+	multiply(S[2], B, P[2], 0, 0, b11x, b11y, 0, 0, n);//S3*B11
+	multiply(A, S[3], P[3], a22x, a22y, 0, 0, 0, 0, n);//A22*S4
+	multiply(S[4], S[5], P[4], 0, 0, 0, 0, 0, 0, n);//S5*S6
+	multiply(S[6], S[7], P[5], 0, 0, 0, 0, 0, 0, n);//S7*S8
+	multiply(S[8], S[9], P[6], 0, 0, 0, 0, 0, 0, n);//S9*S10
+
+	//Calc C
+	//Use S as temp storage
+	add(P[4], P[3], S[0], 0, 0, 0, 0, 0, 0, n);
+	subtr(S[0], P[1], S[0], 0, 0, 0, 0, 0, 0, n);
+	add(S[0], P[5], C, 0, 0, 0, 0, c11x, c11y, n);//C11 = P5+P4-P2+p6
+
+	add(P[0], P[1], C, 0, 0, 0, 0, c12x, c12y, n);//C12 = P1+P2
+
+	add(P[2], P[3], C, 0, 0, 0, 0, c21x, c21y, n);//C21 = P3+P4
+
+	add(P[4], P[0], S[0], 0, 0, 0, 0, 0, 0, n);
+	subtr(S[0], P[2], S[0], 0, 0, 0, 0, 0, 0, n);
+	subtr(S[0], P[6], C, 0, 0, 0, 0, c22x, c22y, n);//C22 = P5+P1-P3-P7
+
+	for(int i = 0; i<10; ++i)
+	{
+		for(int j = 0; j<n; ++j)
+		{
+			if(i<7)
+			{
+				delete[]P[i][j];
+				P[i][j] = NULL;
+			}
+			delete[]S[i][j];
+			S[i][j] = NULL;
+		}
+	}
+
+	for(int i = 0; i<10; ++i)
+	{
+		if(i<7)
+		{
+			delete[]P[i];
+			P[i] = NULL;
+		}
+
+		delete[]S[i];
+		S[i] = NULL;
+	}
+}
+
+void display(int **A, const int &n)
+{
+	for(int i = 0; i<n; ++i)
+	{
+		for(int j = 0; j<n; ++j)
+			printf("%d ", A[i][j]);
+		printf("\n");
+	}
+}
+
+int main()
+{
+	int n = 2;
+	int **A, **B, **C;
+	
+	//Create 3 nxn matrices
+	A = new int*[n];
+	B = new int*[n];
+	C = new int*[n];
+	for(int i = 0; i<n; ++i)
+	{
+		A[i] = new int[n];
+		B[i] = new int[n];
+		C[i] = new int[n];
+	}
+	
+	//Assign A and B
+	A[0][0] = 1;
+	A[0][1] = 2;
+	A[1][0] = 3;
+	A[1][1] = 4;
+
+	B[0][0] = 5;
+	B[0][1] = 6;
+	B[1][0] = 7;
+	B[1][1] = 8;
+
+	//A*B = C
+	multiply(A, B, C, 0, 0, 0, 0, 0, 0, n);
+	printf("Result: \n");
+	display(C, n);
+
+	//Free Data
+	for(int i = 0; i<n; ++i)
+	{
+		delete[]A[i];
+		delete[]B[i];
+		delete[]C[i];
+		A[i] = B[i] = C[i] = NULL;
+	}
+	delete[]A;
+	delete[]B;
+	delete[]C;
+	A = NULL;
+	B = NULL;
+	C = NULL;
+
+	return 0;
+}
+

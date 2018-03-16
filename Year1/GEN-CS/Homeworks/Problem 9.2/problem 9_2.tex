@@ -1,0 +1,62 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb}
+
+\title{Problem 9.2}
+\author{Leul Shiferaw}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle
+	\newpage
+	\pagenumbering{arabic}
+	
+	\begin{flushleft}
+		\textbf{Proof By Induction}\\
+	\end{flushleft}
+	\underline{B. Case}\\\\
+	\begin{tabular}{|r|r|}
+		\hline
+		A & $A \hspace{0.1cm} \vee \hspace{0.1cm} \neg A$\\
+		\hline
+		T & T \\
+		F & T\\
+		\hline
+	\end{tabular}
+	\\\\
+	\begin{tabular}{|r|r|r|}
+		\hline
+		A & B & $A \hspace{0.1cm} \wedge B \hspace{0.1cm} \Rightarrow \hspace{0.1cm} B \hspace{0.1cm} \wedge \hspace{0.1cm} A$\\
+		\hline
+		T & T & T\\
+		T & F & T\\
+		F & T & T\\
+		F & F & T\\
+		\hline
+	\end{tabular}
+	\\\\$\therefore$ The axioms hold validity 
+	
+	$\hspace{4cm} \Box$\\\\
+	\underline{Ind. Step}\\\\
+	$A\hspace{0.1cm}\Rightarrow B \equiv \neg A \vee B$
+	\\$\neg B \Rightarrow \neg A \equiv B \vee \neg A$
+	\\\\Lemma 1: $A \vee B \equiv B \vee A$
+	\\Proof: \\
+	\begin{tabular}{|r|r|r|r|}
+		\hline
+		A & B & $A \vee B$ & $B \vee A$ \\
+		\hline
+		T & T & T & T \\
+		T & F & F & F \\
+		F & T & T & T \\
+		F & F & T & T \\
+		\hline
+	\end{tabular}
+	\\\\By Lemma 1 $\neg A \vee B \equiv B \vee \neg A$
+	\\$A \Rightarrow B \equiv \neg B \Rightarrow \neg A$
+	\\$\therefore$ Transp maintains validity\\
+	\\By Lemma 10.4.4(From the slides) Subst preserves validity\\
+	$\therefore$ Ind. Step holds
+	
+	$\hspace{4cm} \Box$
+\end{document}

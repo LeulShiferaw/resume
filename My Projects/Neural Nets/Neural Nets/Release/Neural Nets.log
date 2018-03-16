@@ -1,0 +1,17 @@
+﻿  main.cpp
+main.cpp(75): warning C4018: '<': signed/unsigned mismatch
+main.cpp(101): warning C4018: '<': signed/unsigned mismatch
+main.cpp(108): warning C4018: '<': signed/unsigned mismatch
+main.cpp(118): warning C4018: '<': signed/unsigned mismatch
+main.cpp(136): warning C4018: '<': signed/unsigned mismatch
+main.cpp(138): warning C4018: '<': signed/unsigned mismatch
+main.cpp(150): warning C4018: '<': signed/unsigned mismatch
+main.cpp(172): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+main.cpp(186): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+main.cpp(198): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+main.cpp(206): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Generating code
+  All 459 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Neural Nets.vcxproj -> C:\Users\Leul Shiferaw\Desktop\My Projects\Neural Nets\Release\Neural Nets.exe
+  Neural Nets.vcxproj -> C:\Users\Leul Shiferaw\Desktop\My Projects\Neural Nets\Release\Neural Nets.pdb (Full PDB)

@@ -1,0 +1,15 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+LINEAR-SEARCH(A, v)\\
+\indent for i = 1 to A.length\\
+\indent \indent if A[i] == v\\
+\indent \indent \indent return i\\
+\indent return NIL\\
+\\
+\textbf{Invariant:} A[1...i-1] doesn't contain the element\\
+\textbf{Maintainance:} If the next i is the value then end function otherwise continue.\\
+\textbf{Termination:} At the end if A[1...A.length] don't have v the we will return NIL
+\end{document}

@@ -1,0 +1,51 @@
+%        File: a10_6.tex
+%     Created: Mi Dez 07 08:00  2016 C
+% Last Change: Mi Dez 07 08:00  2016 C
+%
+\documentclass[a4paper]{article}
+\usepackage{amsmath, amssymb}
+
+\title{Problem 10.6}
+\author{Leul Shiferaw}
+
+\begin{document}
+
+\pagenumbering{gobble}
+\maketitle
+\newpage
+\pagenumbering{arabic}
+
+Each column is one step of QMC1\\
+In QMC1 we remove useless literals\\
+$(x\wedge T)\vee (x\wedge F)$ is the same as $x \wedge (T\vee F)$\\
+which is the same as x\\
+Therefore we remove any literal that is redundant in such a way.\\
+\begin{tabular}{|r|r|r|}
+	\hline
+	Initial&Reduced 1&Reduced 2\\
+	\hline
+	FFTT&FFTX&XFTX\\
+	FTFF&XFTF&TFXF\\
+	TFFF&XTFF&TXFF\\
+	TFTF&TFXF&\\
+	TTFF&TFTX&\\
+	\hline
+\end{tabular}
+\\The next step removes all the non-essential monomials.\\
+Non-essentials are the monomials whose true statements can all be fulfilled by others.\\
+If this can happen then there existence is useless.\\\\
+
+\begin{tabular}{|r|r|r|r|r|r|r|r|}
+	\hline
+	&FFTT&FFTF&FTFF&TFFF&TFTF&TFTT&TTFF\\
+	\hline
+	$\bar{x_2}x_3$&T&T&F&F&T&T&F\\
+	$x_1\bar{x_2}\bar{x_4}$&F&F&F&T&T&F&F\\
+	$x_1\bar{x_3}\bar{x_4}$&F&F&F&T&F&F&T\\
+	\hline
+\end{tabular}
+\\\\
+$\therefore(\bar{x_2}x_3$)+($x_1\bar{x_2}\bar{x_4}$)+($x_1\bar{x_3}\bar{x_4}$)
+\end{document}
+
+

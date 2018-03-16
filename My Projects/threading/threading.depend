@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1465141337 source:c:\users\leul abiy\desktop\threading\main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+
+1474841284 source:c:\users\leul abiy\desktop\my projects\threading\main.cpp
+	<stdio.h>
+

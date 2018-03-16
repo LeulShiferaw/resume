@@ -1,0 +1,5 @@
+The two trivial cases in the this k-means clustering are 1 and 200. One is trivial because there is no need for any clustering at all. It will still be the same set after the clustering because when you initially randomize the data it will all be in one set. After the clustering it will still be the same set. So the codebook vector before and after the clustering is the same.
+
+In the case of 200. We can start by assigning each value to its own set at the beginning. Every step of the way it will remain the same because the mean is itself and the distance is shortest to its own set because the distance is 0 (as small as it can get ofcourse)
+
+If we look at the initial data and the final codebook vectors we can see that the final looks more like the true value. Clearly the k-means clusterin has worked.

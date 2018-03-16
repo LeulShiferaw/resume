@@ -1,0 +1,10 @@
+﻿Build started 9/24/2015 11:53:34 AM.
+     1>Project "C:\Users\Leul Abiy\Desktop\doc_distance\doc_distance\doc_distance.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2013 CTP\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Leul Abiy\Desktop\doc_distance\ctp\doc_distance.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Leul Abiy\Desktop\doc_distance\ctp\doc_distance.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Leul Abiy\Desktop\doc_distance\ctp\doc_distance.lib" /MACHINE:X86 ctp\main.obj
+         doc_distance.vcxproj -> C:\Users\Leul Abiy\Desktop\doc_distance\ctp\doc_distance.exe
+     1>Done Building Project "C:\Users\Leul Abiy\Desktop\doc_distance\doc_distance\doc_distance.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.50

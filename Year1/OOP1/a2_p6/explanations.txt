@@ -1,0 +1,3 @@
+using namespace std makes all the code in the namespace std available without having to prefix it with std::. One solution would be to prefix every command from that namespace with std::.
+
+Critter:: specifies that that method belong to the class Critter therefore the function would have access to its private variables specifically name. If it is not there name would be undeclared. One solution would be to define the function at the declaration in Critter.h.

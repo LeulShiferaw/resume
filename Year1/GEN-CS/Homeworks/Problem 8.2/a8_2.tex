@@ -1,0 +1,104 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Problem 8.2}
+\author{Leul Shiferaw}
+\date{23-11-16}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle
+	\newpage
+	\pagenumbering{arabic}
+	\large
+	Q1.
+	\begin{align*}
+		f &= n^4\\
+		g &= n^3log(n)\\
+		n &>_a log(n)\\
+		n^3*n &>_a n^3*log(n)\\
+		n^4 &>_a n^3log(n)\\
+		\therefore f &\in \Omega (g)		
+	\end{align*}
+	Q2.
+	\begin{align*}		
+		f &= n + n^2\\
+		g &= n + 3n^3\\
+		&\lim_{n\to\infty}(\frac{f}{g})\\
+		&\lim_{n\to\infty}\frac{n^2+n}{3n^3+n}=0\\
+		&\therefore f\in O(g)
+	\end{align*}
+	Q3.
+	\begin{align*}
+		f &= e^{n^2}\\
+		g &= 2^n\\
+		&\lim_{n\to\infty}\frac{e^{n^2}}{2^n}=\infty\\
+	\end{align*}
+	Since e is greater than 2 and $n^2 > n$ the limit goes to infinity
+	\begin{align*}
+		&\therefore f\in\Omega(g)
+	\end{align*}
+	Q4.
+	\begin{align*}
+		f &= n\\
+		g &= sin(n)
+	\end{align*}
+	sin(n) is bounded between 0 and 1.
+	\begin{align*}
+		\therefore f\in\Omega(g)
+	\end{align*}
+	\newpage
+	Q5.
+	\begin{align*}
+		&f = 12\\
+		&g = 24\\
+		&g = 2f\\
+		&\therefore f\in\Theta(g)
+	\end{align*}
+	Q6.
+	\begin{align*}
+		&f = \frac{n^2}{log(n)}\\
+		&g = n^4 + log(n)\\
+		&\lim_{n\to\infty}{f/g}\\
+		&\lim_{n\to\infty}{\frac{n^2}{n^4log(n)}}=0\\
+		&\therefore f\in O(g)
+	\end{align*}
+	Q7.
+	\begin{align*}
+		&f = ln(n)\\
+		&g = log(n)\\
+		&f = \frac{log(n)}{log(e)}\\
+		&f = \frac{g}{log(e)}\\
+		&\therefore f\in\Theta(g)
+	\end{align*}
+	Q8.
+	\begin{align*}
+		&f = 5^n\\
+		&g = n!
+	\end{align*}
+	$5^n$ is always multiplying 5, but n! starts from n and goes down. Therefore asymptotically n! will be greater than $5^n$
+	\begin{align*}
+		&\therefore f\in O(n!)
+	\end{align*}
+	\newpage
+	Q9.
+	\begin{align*}
+		&f = 9^n\\
+		&g = n^{log_n(8^n)}\\
+		&g = 8^n\\
+		&\lim_{n\to\infty}\frac{9^n}{8^n}\\
+		&\lim_{n\to\infty}1.125^n=\infty\\
+		&\therefore f\in\Omega(g)
+	\end{align*}
+	Q10.
+	\begin{align*}
+		&f = (n^3 + 3)^2\\
+		&g = (3n^3 + 2)^2\\
+		&f = n^6 + ...\\
+		&g = 9n^6 + ...\\
+		&\lim_{n\to\infty}\frac{f}{g} = 1/9\\
+		&\therefore f\in\Theta(g)
+	\end{align*}
+\end{document}

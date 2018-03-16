@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1464774346 source:c:\users\leul abiy\desktop\genetic algo\main.cpp
+	<iostream>
+	<map>
+	<math.h>
+	<string>
+	<vector>
+	<cstdlib>
+	<ctime>
+

@@ -1,0 +1,57 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb}
+
+\title{Problem 9.2}
+\author{Leul Shiferaw}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle
+	\newpage
+	\pagenumbering{arabic}
+	
+	\begin{flushleft}
+		\textbf{Proof By Induction}\\
+	\end{flushleft}
+	\underline{B. Case}\\\\
+	\begin{tabular}{|r|r|}
+		\hline
+		A & $A \hspace{0.1cm} \vee \hspace{0.1cm} \neg A$\\
+		\hline
+		T & T \\
+		F & T\\
+		\hline
+	\end{tabular}
+	\\\\
+	\begin{tabular}{|r|r|r|}
+		\hline
+		A & B & $A \hspace{0.1cm} \wedge B \hspace{0.1cm} \Rightarrow \hspace{0.1cm} B \hspace{0.1cm} \wedge \hspace{0.1cm} A$\\
+		\hline
+		T & T & T\\
+		T & F & T\\
+		F & T & T\\
+		F & F & T\\
+		\hline
+	\end{tabular}
+	\\\\$\therefore$ The axioms hold validity 
+	
+	$\hspace{4cm} \Box$\\\\
+	\underline{Ind. Step}\\\\
+	If A $\Rightarrow$ B is valid then $\neg$B $\Rightarrow \neg$A is valid\\\\
+	\begin{tabular}{|r|r|r|r|}
+		\hline
+		A & B & A $\Rightarrow$ B & $\neg$B $\Rightarrow$ $\neg$A\\
+		\hline
+		T & T & T & T\\
+		T & F & F & F\\
+		F & T & T & T\\
+		F & F & T & T\\
+		\hline
+	\end{tabular}	
+	\\\\Transp maintains validity\\
+	By Lemma 10.4.4 Subst preserves validity\\
+	$\therefore$ Ind. Step holds
+	
+	$\hspace{4cm} \Box$
+\end{document}

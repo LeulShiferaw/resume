@@ -1,0 +1,46 @@
+%        File: a10_9.tex
+%     Created: Di Dez 06 03:00  2016 C
+% Last Change: Di Dez 06 03:00  2016 C
+%
+\documentclass[a4paper]{article}
+
+\usepackage{amsmath, amssymb}
+
+\title{Problem 10.9}
+\author{Leul Shiferaw}
+
+\begin{document}
+
+\pagenumbering{gobble}
+\maketitle
+\newpage
+\pagenumbering{arabic}
+
+\begin{align*}
+	&(\neg A\wedge \neg B \Rightarrow \neg(A\vee B))^f\\
+	&(\neg A\wedge B)^t\\
+	&\neg A^t\\
+	&\neg B^t\\
+	&A^f\\
+	&(A\wedge B)^t\\
+	&A^t\hspace{0.1cm}|\hspace{0.1cm} B^t\\
+	&\perp \hspace{0.5cm}\perp
+\end{align*}
+Therefore the initial statement is not false(true)\\
+\newpage
+\begin{align*}
+	&(A\Rightarrow B) \wedge (B\Rightarrow A\wedge B)^t\\
+	&A\Rightarrow B^t\\
+	&B\Rightarrow A\wedge B^t\\
+\end{align*}
+\begin{tabular}{|c|c|c|c|}
+	&A$^f$&B$^t$&\\
+	B$^f$ & A$\wedge$ B$^t$ & $B^f$ & A$\wedge$ B$^t$\\
+	& A$^t$ & & A$^t$\\
+	& && B$^t$\\
+\end{tabular}
+\\
+$\indent\indent\hspace{0.2cm}\perp\hspace{1cm}\perp$
+\\Continue to the table
+\\\\$\therefore$ \{\{A$^f$, B$^f$\}, \{A$^t$, B$^t$\}\}
+\end{document}

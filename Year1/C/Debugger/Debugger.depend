@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1475695042 source:/home/leulshiferaw/Desktop/Prog in/Debugger/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

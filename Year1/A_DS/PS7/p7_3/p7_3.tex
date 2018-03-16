@@ -1,0 +1,21 @@
+\documentclass{article}
+
+\usepackage{amsmath,amssymb}
+
+\title{Problem 3}
+\author{Leul Shiferaw}
+
+\begin{document}
+	\maketitle
+	\newpage
+	At each stage every node duplicates in a perfect binary tree. Therefore the number of nodes grows by a factor of two. 1*2*2*2*2... where the number of twos is the depth. Therefore it will be $2^n$, where n=depth.\\\\
+	\indent \indent \indent \indent \indent \indent S(h) = Total number of nodes at each stage
+	\begin{align*}
+		&S(h) = \sum_{i=0}^{h} 2^i\\
+		&S(h) = 1+2+2^2+2^3...+2^{h}\\
+		2&S(h) = 2+2^{2}+2^{3}...+2^{h+1}\\
+		&S(h)-2S(h) = 1-2^{h+1}\\
+		&S(h)=\frac{1-2^{h+1}}{1-2}\\
+		&\therefore	S(h)=2^{h+1}-1
+	\end{align*}
+\end{document}

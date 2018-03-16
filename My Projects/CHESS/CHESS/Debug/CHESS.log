@@ -1,0 +1,24 @@
+﻿  main_game.cpp
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(647): warning C4018: '<': signed/unsigned mismatch
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(682): warning C4018: '<': signed/unsigned mismatch
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(778): warning C4018: '<': signed/unsigned mismatch
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(813): warning C4018: '<': signed/unsigned mismatch
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(867): warning C4018: '<': signed/unsigned mismatch
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(906): warning C4018: '<': signed/unsigned mismatch
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(950): warning C4018: '<': signed/unsigned mismatch
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(975): warning C4018: '<': signed/unsigned mismatch
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(1004): warning C4018: '<': signed/unsigned mismatch
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(1029): warning C4018: '<': signed/unsigned mismatch
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(1057): warning C4018: '<': signed/unsigned mismatch
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(1110): warning C4018: '<': signed/unsigned mismatch
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(1164): warning C4018: '<': signed/unsigned mismatch
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(1187): warning C4018: '<': signed/unsigned mismatch
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(1211): warning C4018: '<': signed/unsigned mismatch
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(1316): warning C4018: '<': signed/unsigned mismatch
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(1345): warning C4018: '<': signed/unsigned mismatch
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(1377): warning C4018: '<': signed/unsigned mismatch
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(1404): warning C4018: '<': signed/unsigned mismatch
+c:\users\leul shiferaw\desktop\my projects\chess\chess\main_game.cpp(1438): warning C4018: '<': signed/unsigned mismatch
+  main.cpp
+  Generating Code...
+  CHESS.vcxproj -> C:\Users\Leul Shiferaw\Desktop\My Projects\CHESS\Debug\CHESS.exe

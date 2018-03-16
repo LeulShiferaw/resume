@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1464842871 source:c:\users\leul abiy\desktop\neural network\main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<math.h>
+	<cstdlib>
+	<ctime>
+	<map>
+
