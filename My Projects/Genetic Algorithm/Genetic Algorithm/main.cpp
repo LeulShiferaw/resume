@@ -10,7 +10,7 @@ using namespace std;
 
 int popn_size = 100;
 int max_generations = 1000;
-int chromosome_len = 1600; 
+int chromosome_len = 100; 
 int gene_len = 4;
 double mutation_rate = 0.1;
 double crossover_rate = 0.7;
@@ -515,6 +515,7 @@ void GA::display_fittest()
 
 int main()
 {
+	cout << "This program evolves a random string of +, -, /, * and numbers to a solution that matches the input.\n";
 	srand(time(NULL));
 	vector<char> results;
 	for (int i = 0; i < 10; ++i)
@@ -528,6 +529,7 @@ int main()
 
 	encode(results);
 
+	/*
 	cout << "Enter mutation rate: ";
 	cin >> mutation_rate;
 
@@ -539,31 +541,30 @@ int main()
 
 	cout << "Enter chromosome size: ";
 	cin >> chromosome_len;
+	*/
+
+	int x = 1;
+	cout << "Enter number 1-1000: ";
+	cin >> x;
+
+	GA my_GA(chromosome_len, x);
 
 	while (true)
-	{ 
-		int x;
-		cout << "Enter target: ";
-		cin >> x;
-		GA my_GA(chromosome_len, x);
-
-		while (true)
+	{
+		//my_GA.display_chromosomes();
+		if (my_GA.target_reached())
 		{
-			//my_GA.display_chromosomes();
-			if (my_GA.target_reached())
-			{
-				my_GA.display_target();
-				break;
-			}
-			else if (my_GA.gen_maxed_out())
-			{
-				cout << "Couldn't find solution!" << endl;
-				break;
-			}
-			my_GA.evolution_fitness(); //Go to next gen and recalc the fitnesss.
-			//my_GA.display_fittest();
-			//cin.get();
+			my_GA.display_target();
+			break;
 		}
+		else if (my_GA.gen_maxed_out())
+		{
+			cout << "Couldn't find solution!" << endl;
+			break;
+		}
+		my_GA.evolution_fitness(); //Go to next gen and recalc the fitnesss.
+		//my_GA.display_fittest();
+		//cin.get();
 	}
 
 
